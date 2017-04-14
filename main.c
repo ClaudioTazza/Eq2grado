@@ -13,7 +13,7 @@ int main(){
 
   controlValue = controlli(a, b, c);
 
-  if(controlValue = 0){
+  if(controlValue == 0){
      delta = cDelta(a, b, c);
 
      if(delta < 0){
