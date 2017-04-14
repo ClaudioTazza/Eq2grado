@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <math.h>
 
-float cDelta(float a , float b, float c);
-int controlli(float a, float b, float c);
+float cDelta(int a , int b, int c);
+int controlli(int a, int b, int c);
 
 int main(){
 
-  float delta, x1, x2, a, b, c, controlValue;
+  int a, b, c, controlValue;
+  float delta, x1, x2;
 
   puts("Inserisci la a, b e c della equazione.");
-  scanf("%f%f%f", &a, &b, &c);
+  scanf("%d%d%d", &a, &b, &c);
 
   controlValue = controlli(a, b, c);
 
@@ -17,7 +18,7 @@ int main(){
      delta = cDelta(a, b, c);
 
      if(delta < 0){
-       puts("L'equazione non accetta soluzioni");
+       puts("L'equazione non ammette soluzioni");
      }
 
      else{
@@ -33,14 +34,14 @@ int main(){
   return 0;
 }
 
-float cDelta(float a, float b, float c){
+float cDelta(int a, int b, int c){
    float delta;
 
    //Formula per calcolare il delta
    return (b * b) - (4 * a * c);
 }
 
-int controlli(float a, float b, float c){
+int controlli(int a, int b, int c){
   if (a==0 && b==0 && c==0){
      puts("L'equazione 0 = 0 ammette infinite soluzioni");
      return 1;
@@ -53,7 +54,7 @@ int controlli(float a, float b, float c){
 
   else if (a==0){
      puts("L'equazione si riduce al primo grado");
-     printf("Soluzione: %f\n", -c / b);
+     printf("Soluzione: %f\n", (float)-c / b);
      return 1;
   }
 
